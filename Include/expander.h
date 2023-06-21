@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   expander.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sguntepe <sguntepe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sguntepe <@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/28 05:54:30 by sguntepe          #+#    #+#             */
-/*   Updated: 2022/12/28 05:54:30 by sguntepe         ###   ########.fr       */
+/*   Created: 2023/01/19 13:26:35 by sguntepe          #+#    #+#             */
+/*   Updated: 2023/06/21 18:52:06 by sguntepe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,9 @@ void	expand_dollar_value(char **dst, char **src);
 
 void	clear_void_contents(void);
 
-//EXANDCMD
+//EXPANDCMD
 void	expand_cmd(char **dst);
 void	expand_from_env_value(char **dst, char *content);
 char	*get_arg_from_env_value(char **envs, char *search_arg_name);
-
-void	print_expander(void);
 
 #endif

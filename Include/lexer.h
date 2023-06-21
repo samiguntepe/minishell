@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lexer.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sguntepe <sguntepe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sguntepe <@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/28 05:54:34 by sguntepe          #+#    #+#             */
-/*   Updated: 2022/12/28 05:54:34 by sguntepe         ###   ########.fr       */
+/*   Created: 2023/01/19 13:26:40 by sguntepe          #+#    #+#             */
+/*   Updated: 2023/06/21 18:52:06 by sguntepe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,5 @@ void		free_lexer(void);
 void		free_lexer_without_heradoc(t_lexlist *stop_list);
 int			skip_heradoc(t_lexlist **lex, t_lexlist **temp,
 				t_lexlist *stop, int *flag);
-
-void		print_lexer(void);
 
 #endif

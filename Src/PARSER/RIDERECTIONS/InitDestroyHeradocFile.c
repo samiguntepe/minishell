@@ -3,14 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   InitDestroyHeradocFile.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sguntepe <sguntepe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sguntepe <@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/28 05:17:25 by sguntepe          #+#    #+#             */
-/*   Updated: 2022/12/28 05:17:25 by sguntepe         ###   ########.fr       */
+/*   Created: 2023/01/19 13:33:03 by sguntepe          #+#    #+#             */
+/*   Updated: 2023/06/21 18:52:06 by sguntepe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
+#include "../../../Include/minishell.h"
+
+/*
+	
+Heredoc okumak için açılan dosyanın kapatılmasını sağlar. Eğer dosya açıksa, dosyanın
+dosya tanımlayıcısı kapatılır ve heredoc okuma işlemi sonlandırılır. Fonksiyon ayrıca
+g_core.heradoc_fd değişkeninin değerini sıfırlar.
+*/
 
 void	close_heradoc_file(void)
 {
@@ -20,6 +27,25 @@ void	close_heradoc_file(void)
 		g_core.heradoc_fd = 0;
 	}
 }
+
+/*
+	Fonksiyon oluşturulacak dosyanın açılması için kullanılır.
+	ptr, getcwd ile geçerli çalışma dizini yolunu depolamak için bir 
+	arabellek olarak kullanılır.
+	own_strjoin ve str_addchar kullanılarak, heracoc_path değişkenine geçerli 
+	dizin yolu ve "heradoc" dosya adı eklenir.
+	create_mode değişkeninin değeri ile "READ" karşılaştırması yapar ve sonuca 
+	göre dosyanın okuma veya yazma modunda açılacağını belirler.
+
+	Eğer create_mode değişkeni "READ" ise, open fonksiyonu O_RDONLY modunda açılır ve 
+	g_core.heradoc_fd değişkenine dosya tanımlayıcısı atanır. 
+	Aksi takdirde, open fonksiyonu O_WRONLY | O_CREAT | O_TRUNC modunda açılır, dosya yoksa 
+	oluşturulur ve dosyanın içeriği silinir.
+
+	0777 -> dosya sisteminde dosya ya da dizinlerin erişim izinlerini belirler. 
+	Bu sayı dosyanın veya dizinin tüm erişim haklarının açık olduğunu gösterir.
+
+*/
 
 void	open_heradoc_file(char	*create_mode)
 {

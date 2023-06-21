@@ -3,21 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   tables.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sguntepe <sguntepe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sguntepe <@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/28 06:08:23 by sguntepe          #+#    #+#             */
-/*   Updated: 2022/12/28 06:08:23 by sguntepe         ###   ########.fr       */
+/*   Created: 2023/01/19 13:27:03 by sguntepe          #+#    #+#             */
+/*   Updated: 2023/06/21 18:52:06 by sguntepe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef TABLES_H
 # define TABLES_H
-
-typedef struct s_title
-{
-	char	*head;
-	char	*full_title;
-}	t_title;
 
 typedef struct s_env
 {
@@ -55,17 +49,14 @@ typedef struct s_cmdlist
 
 typedef struct s_core
 {
-	int			main_pid;
+	int			exit_status;
 	int			exec_output;
-	int			old_exec_output;
 	int			heradoc_fd;
-	int			is_read_arg;
 	char		*cmd;
 	char		**metachars;
 	t_env		*env_table;
 	t_lexlist	*lex_table;
 	t_cmdlist	*cmd_table;
-	t_title		title;
 }	t_core;
 
 #endif

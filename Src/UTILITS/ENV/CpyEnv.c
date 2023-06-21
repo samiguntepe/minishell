@@ -3,14 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   CpyEnv.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sguntepe <sguntepe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sguntepe <@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/28 05:32:04 by sguntepe          #+#    #+#             */
-/*   Updated: 2022/12/28 05:32:04 by sguntepe         ###   ########.fr       */
+/*   Created: 2023/01/19 13:33:23 by sguntepe          #+#    #+#             */
+/*   Updated: 2023/06/21 18:52:06 by sguntepe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
+#include "../../../Include/minishell.h"
+
+/*
+	Mevcut çevresel değişken sayısı hesaplanır.
+*/
 
 int	get_env_len(void)
 {
@@ -27,6 +31,14 @@ int	get_env_len(void)
 	}
 	return (count);
 }
+
+/*
+	Programın çalışma ortamındaki çevresel değişkenlerin (environment variables) kopyalarını
+	alarak, kopyaları tutan bir dizi döndürür. Bu kopyalar daha sonra programın farklı
+	bölümlerinde güvenli bir şekilde kullanılabilir.
+
+	-env_table, çevresel değişkenlerin tutulduğu bir bağlı liste içerir.
+*/
 
 char	**get_env_cpy(void)
 {
@@ -53,6 +65,11 @@ char	**get_env_cpy(void)
 	}
 	return (envlist);
 }
+
+/*
+	bir ortam listesi dizisini serbest bırakmak için kullanılır.
+*/
+
 
 void	free_env_cpy(char **envlist)
 {

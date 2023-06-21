@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   macros.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sguntepe <sguntepe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sguntepe <@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/28 05:59:33 by sguntepe          #+#    #+#             */
-/*   Updated: 2022/12/28 05:59:33 by sguntepe         ###   ########.fr       */
+/*   Created: 2023/01/19 13:26:45 by sguntepe          #+#    #+#             */
+/*   Updated: 2023/06/21 18:52:06 by sguntepe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,6 @@
 # define SIGN_DOUBLE_GREAT 122
 # define SIGN_SINGLE_LESS 59
 # define SIGN_DOUBLE_LESS 118
-# define SIGN_SINGLE_QUOTE 39
-# define SIGN_DOUBLE_QUOTE 34
 # define SIGN_PIPE 123
 # define TEXT 0
 # define SSTDIN 0

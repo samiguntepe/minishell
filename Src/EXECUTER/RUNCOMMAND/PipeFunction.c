@@ -3,14 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   PipeFunction.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sguntepe <sguntepe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sguntepe <@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/28 05:43:56 by sguntepe          #+#    #+#             */
-/*   Updated: 2022/12/28 05:43:56 by sguntepe         ###   ########.fr       */
+/*   Created: 2023/01/19 13:28:23 by sguntepe          #+#    #+#             */
+/*   Updated: 2023/06/21 18:52:06 by sguntepe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
+#include "../../../Include/minishell.h"
+
+/*
+  Bu fonksiyon bizim 6'lık integer yer açtığımız yerdir.
+  Bu fonksiyonun amacı pipe ile aldığımız argümanların
+  input ve outputlarını birbirine bağlamak diyebiliriz.
+*/
 
 int	*create_pipe(void)
 {
@@ -23,6 +29,12 @@ int	*create_pipe(void)
 		fd[index] = 0;
 	return (fd);
 }
+
+/*
+  Bu fonksiyon bizim input ve outputların yeri değiştikten
+  sonra içlerini sıfırlayıp close fonksiyonu ile kapatmamızı 
+  sağlayan fonksiyondur.
+*/
 
 void	clear_pipe(int *fd)
 {
@@ -40,18 +52,30 @@ void	clear_pipe(int *fd)
 	}
 }
 
-void	switch_pipe(int **fd)
+/*
+  Bu fonksiyon bizim bitler arası yer değiştirme yaptığımız
+  asıl yerdir. Bu fonksiyonun amacı birden fazla pipe fonksiyonu 
+  varsa sürekli yer değiştirerek diğer pipeları da 6 bitlik yere almamızı
+  sağlar.
+*/
+
+void    switch_pipe(int **fd)
 {
-	(*fd)[0] = (*fd)[0] ^ (*fd)[2];
-	(*fd)[2] = (*fd)[0] ^ (*fd)[2];
-	(*fd)[0] = (*fd)[0] ^ (*fd)[2];
-	(*fd)[1] = (*fd)[1] ^ (*fd)[3];
-	(*fd)[3] = (*fd)[1] ^ (*fd)[3];
-	(*fd)[1] = (*fd)[1] ^ (*fd)[3];
-	(*fd)[5] = (*fd)[5] ^ (*fd)[3];
-	(*fd)[3] = (*fd)[5] ^ (*fd)[3];
-	(*fd)[5] = (*fd)[5] ^ (*fd)[3];
-	(*fd)[4] = (*fd)[2] ^ (*fd)[4];
-	(*fd)[2] = (*fd)[2] ^ (*fd)[4];
-	(*fd)[4] = (*fd)[2] ^ (*fd)[4];
+    int temp;
+
+    temp = (*fd)[0];
+    (*fd)[0] = (*fd)[2];
+    (*fd)[2] = temp;
+
+    temp = (*fd)[1];
+    (*fd)[1] = (*fd)[3];
+    (*fd)[3] = temp;
+
+    temp = (*fd)[5];
+    (*fd)[5] = (*fd)[3];
+    (*fd)[3] = temp;
+
+    temp = (*fd)[2];
+    (*fd)[2] = (*fd)[4];
+    (*fd)[4] = temp;
 }

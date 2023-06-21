@@ -3,14 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   FileErrorCheck.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sguntepe <sguntepe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sguntepe <@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/28 02:33:15 by sguntepe          #+#    #+#             */
-/*   Updated: 2022/12/28 02:33:15 by sguntepe         ###   ########.fr       */
+/*   Created: 2023/01/19 13:31:15 by sguntepe          #+#    #+#             */
+/*   Updated: 2023/06/21 18:52:06 by sguntepe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
+#include "../../../Include/minishell.h"
+
+/*
+  Komut satırına girilen karakter <<, <, >>, > bunlardan biri ise bu fonksiyona gelir.
+  Eğer metakarakter sonrası bir text yok ise else sorgusuna girer. Eğer farklı bir karakter var ise
+  if sorgusuna girer ve iki sorguda da 258 hata kodunu döndürür.
+  free_lexer_without_heradoc fonksiyonuna yönlendirme yapar.
+  Bu fonksiyon bizim bizim terminalde girdiğimiz karakterleri kontrol etmemizi sağlar.
+*/
 
 int	file_error_check(t_lexlist *lex_list)
 {
@@ -20,7 +28,7 @@ int	file_error_check(t_lexlist *lex_list)
 		{
 			print_error("-bash: syntax error near unexpected token '",
 				lex_list->next->content, "'\n");
-			g_core.exec_output = 2;
+			g_core.exec_output = 258 ;
 			free_lexer_without_heradoc(lex_list);
 			return (0);
 		}
@@ -28,7 +36,7 @@ int	file_error_check(t_lexlist *lex_list)
 		{
 			print_error("-bash: syntax error near unexpected token '",
 				"newline", "'\n");
-			g_core.exec_output = 2;
+			g_core.exec_output = 258 ;
 			free_lexer_without_heradoc(lex_list);
 			return (0);
 		}

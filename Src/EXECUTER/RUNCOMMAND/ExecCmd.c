@@ -3,14 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ExecCmd.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sguntepe <sguntepe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sguntepe <@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/28 05:43:51 by sguntepe          #+#    #+#             */
-/*   Updated: 2022/12/28 05:43:51 by sguntepe         ###   ########.fr       */
+/*   Created: 2023/01/19 13:28:17 by sguntepe          #+#    #+#             */
+/*   Updated: 2023/06/21 18:52:06 by sguntepe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
+#include "../../../Include/minishell.h"
+
+/*
+	exec_command -> Yürütülecek komutların işlenmesini sağlayan bir fonksiyon.
+		cmd_node = Yürütülecek komutu yani bir komut satırının parçalarını (örneğin, ls -l /)
+		ve bunların bir araya getirilmesi için kullanılacak işaretleri (örneğin, | veya ;) içerir.
+		fd = Dosya tanımlayıcılarını içeren bir dizi. Komutun standart giriş, çıkış ve hata çıkış 
+		dosyalarını yönlendirmek için kullanılır.
+		fd_index = Dosya tanımlayıcıları için dizi indeksi. fd dizisindeki hangi 
+		dosya tanımlayıcısının kullanılacağını belirler.
+*/
 
 void	exec_command(t_cmdlist *cmd_node, int *fd, int fd_index)
 {
@@ -26,6 +36,12 @@ void	exec_command(t_cmdlist *cmd_node, int *fd, int fd_index)
 	else
 		run_execve(cmd_node, fd, fd_index);
 }
+
+/*
+  Bu fonksiyon komut satırında genellikle dosya yolu belirttiği zaman 
+  kullanılır. Son '/' karakterinden itibaren komut satırının sonuna kadar
+  saymamızı sağlar.
+*/
 
 char	*get_cmd(char *cmd)
 {

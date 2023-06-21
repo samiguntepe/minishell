@@ -3,19 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sguntepe <sguntepe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sguntepe <@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/28 05:24:33 by sguntepe          #+#    #+#             */
-/*   Updated: 2022/12/28 05:24:33 by sguntepe         ###   ########.fr       */
+/*   Created: 2023/01/19 13:34:42 by sguntepe          #+#    #+#             */
+/*   Updated: 2023/06/21 18:52:06 by sguntepe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
-
-/*
-	gönderilen karakter dizisi icin heap bellekte
-	yer ayrilir ve ardindan return edilir.
-*/
+#include "../../../Include/minishell.h"
 
 char	*ft_strdup(char *ptr)
 {

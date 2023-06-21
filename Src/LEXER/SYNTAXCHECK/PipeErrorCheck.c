@@ -3,14 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   PipeErrorCheck.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sguntepe <sguntepe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sguntepe <@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/28 02:34:15 by sguntepe          #+#    #+#             */
-/*   Updated: 2022/12/28 02:34:15 by sguntepe         ###   ########.fr       */
+/*   Created: 2023/01/19 13:31:23 by sguntepe          #+#    #+#             */
+/*   Updated: 2023/06/21 18:52:06 by sguntepe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
+#include "../../../Include/minishell.h"
+
+/*
+  Eğer pipe karakteri iki defa kullanılmışsa ilk if sorgusuna girip hata mesajı döndürür.
+  Eğer bir defa kullanılmışsa run_miss_arguman fonksiyonuna gidilir. 
+*/
 
 int	pipe_error_check(t_lexlist *lex_list)
 {
@@ -20,6 +25,12 @@ int	pipe_error_check(t_lexlist *lex_list)
 		return (run_miss_arg(lex_list));
 	return (1);
 }
+
+/* 
+  Bu fonksiyon eksik girilen argümanı ilk başta ptr değişkenine alır. Daha sonra
+  lex_list'e ekleme yapıp classify fonksiyonu ile sınıflandırır. str_addchar ve own_strjoin
+  fonksiyonları ile de g_core.cmd değişkenine ekleme yapar.
+*/
 
 int	run_miss_arg(t_lexlist *lex_list)
 {

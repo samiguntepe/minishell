@@ -3,18 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sguntepe <sguntepe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sguntepe <@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/28 05:25:24 by sguntepe          #+#    #+#             */
-/*   Updated: 2022/12/28 05:25:24 by sguntepe         ###   ########.fr       */
+/*   Created: 2023/01/19 13:36:40 by sguntepe          #+#    #+#             */
+/*   Updated: 2023/06/21 18:52:06 by sguntepe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
-
-/*
-	Karakter dizisinin boyutunu alir.
-*/
+#include "../../../Include/minishell.h"
 
 size_t	ft_strlen(char *ptr)
 {

@@ -1,37 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   StrAddChar.c                                       :+:      :+:    :+:   */
+/*   executer.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sguntepe <@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/19 13:36:56 by sguntepe          #+#    #+#             */
+/*   Created: 2023/01/19 13:28:06 by sguntepe          #+#    #+#             */
 /*   Updated: 2023/06/21 18:52:06 by sguntepe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../Include/minishell.h"
+#include "../../Include/minishell.h"
 
 /*
-	str_addchar -> verilen bir karakter dizisine yeni bir karakter ekler.
+  bu fonksiyon artık ayrıştırdığımız argümanları çalıştırmaya başladığımız yer.
+  Eğer pipe yok ise run_single_command fonksiyonuna, eğer pipe var ise run_multiple_command
+  fonksiyonuna yönlendirme yapar.
 */
 
-void	str_addchar(char **dst, char c)
+void	executer(void)
 {
-	char	*ptr;
-	char	*holder_ptr;
-	char	*holder_dst;
-	int		len;
-
-	len = ft_strlen(*dst) + 1;
-	ptr = (char *)malloc(sizeof(char) * (len + 1));
-	holder_ptr = ptr;
-	holder_dst = *dst;
-	while (holder_dst && *holder_dst)
-		*(holder_ptr++) = *(holder_dst++);
-	*(holder_ptr++) = c;
-	*(holder_ptr++) = 0;
-	if (*dst)
-		free(*dst);
-	*dst = ptr;
+	if (!g_core.cmd_table)
+		return ;
+	else if (!g_core.cmd_table->next)
+		run_single_command(g_core.cmd_table, NULL);
+	else
+		run_multiple_command(g_core.cmd_table);
 }

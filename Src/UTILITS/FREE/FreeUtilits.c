@@ -3,14 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   FreeUtilits.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sguntepe <sguntepe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sguntepe <@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/28 05:37:20 by sguntepe          #+#    #+#             */
-/*   Updated: 2022/12/28 05:37:20 by sguntepe         ###   ########.fr       */
+/*   Created: 2023/01/19 13:34:05 by sguntepe          #+#    #+#             */
+/*   Updated: 2023/06/21 18:52:06 by sguntepe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
+#include "../../../Include/minishell.h"
+
+/*
+	metakarakterlerin dinamik olarak tahsis edilmiş bellek alanını serbest bırakır.
+*/
 
 void	free_metachars(void)
 {
@@ -23,6 +27,11 @@ void	free_metachars(void)
 		free(*(temp_metachars++));
 	free(g_core.metachars);
 }
+
+/*
+	shell ortam tablosundaki tüm değişkenlerin isim ve değerlerini içeren yapıları
+	hafızadan siler ve temizler.
+*/
 
 void	free_envtable(void)
 {
@@ -38,10 +47,4 @@ void	free_envtable(void)
 		free(temp_env->content);
 		free(temp_env);
 	}
-}
-
-void	free_title(void)
-{
-	free(g_core.title.full_title);
-	free(g_core.title.head);
 }

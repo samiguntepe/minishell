@@ -3,14 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   InFile.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sguntepe <sguntepe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sguntepe <@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/28 05:16:17 by sguntepe          #+#    #+#             */
-/*   Updated: 2022/12/28 05:16:17 by sguntepe         ###   ########.fr       */
+/*   Created: 2023/01/19 13:32:58 by sguntepe          #+#    #+#             */
+/*   Updated: 2023/06/21 18:52:06 by sguntepe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
+#include "../../../Include/minishell.h"
+
+/*
+	create_infile -> girdi dosyası bağlantısı oluşturur. getcwd fonksiyonu çağrılarak 
+	geçerli çalışma dizininin adı alınır ve dosya adı ile birleştirilir. Dosya adı ve
+	yolunun tam adı pwd'de saklanır. Erişim kontrolü yapılır ve dosyanın varlığı kontrol 
+	edilir. O_RDONLY flag'iyle açılır ve file->fd'ye atanır. Dosya mevcut değilse 
+	hata mesajı yazdırılır.
+*/
 
 void	create_infile(t_cmdlist *node, t_filelist *file)
 {

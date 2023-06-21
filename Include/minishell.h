@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sguntepe <@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/28 06:01:25 by sguntepe          #+#    #+#             */
-/*   Updated: 2023/06/21 15:36:18 by sguntepe         ###   ########.fr       */
+/*   Created: 2023/01/19 13:26:49 by sguntepe          #+#    #+#             */
+/*   Updated: 2023/06/21 18:52:06 by sguntepe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,19 +31,9 @@
 
 t_core	g_core;
 
-//	MAIN
-void	init_core(char **env);
-
 void	free_for_loop(void);
 void	free_core(void);
-
-void	update_loop(void);
-void	update_history(char *cmd);
-void	update_exec_output(void);
-
-void	sig_handler(int signum);
-int		signal_in_reading(void);
-int		signal_while_cmd_works(void);
+void	signals(int sig);
 void	exit_signal_check(void);
 
 #endif

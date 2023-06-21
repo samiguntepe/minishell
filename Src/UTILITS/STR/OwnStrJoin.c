@@ -3,21 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   OwnStrJoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sguntepe <sguntepe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sguntepe <@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/28 05:26:20 by sguntepe          #+#    #+#             */
-/*   Updated: 2022/12/28 05:26:20 by sguntepe         ###   ########.fr       */
+/*   Created: 2023/01/19 13:36:51 by sguntepe          #+#    #+#             */
+/*   Updated: 2023/06/21 18:52:06 by sguntepe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
+#include "../../../Include/minishell.h"
 
 /*
-	gonderilne dst dizisine src'yi ekler.
-	Eger dst'nin ici bos ise sadece src ile yaratilir.
-	İslemlerden sonra eger onceden bir dst degeri var ise bu freelenir
-	ve ardindan yeni olusturulan dizi dst'ye atanir.
+	own_strjoin -> verilen iki karakter dizisini birleştirir ve sonucu geri döndürür.
+	Yeni karakter dizisi, dinamik olarak ayrılan bellekte saklanır.
 */
+
 void	own_strjoin(char **dst, char *src)
 {
 	char	*ptr;

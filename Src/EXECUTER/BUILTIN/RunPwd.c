@@ -3,14 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   RunPwd.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sguntepe <sguntepe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sguntepe <@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/28 05:42:23 by sguntepe          #+#    #+#             */
-/*   Updated: 2022/12/28 05:42:23 by sguntepe         ###   ########.fr       */
+/*   Created: 2023/01/19 13:27:47 by sguntepe          #+#    #+#             */
+/*   Updated: 2023/06/21 18:52:06 by sguntepe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
+#include "../../../Include/minishell.h"
+
+/*
+  Bu fonksiyon bizim şuanda oluğumuz dizini göstermemizi 
+  sağlayan fonksiyondur. getcwd ile olduğumuz çalışma dizininin
+  yolunu gösterir.
+*/
 
 void	run_pwd(t_cmdlist *cmd_node)
 {

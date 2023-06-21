@@ -3,14 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   RaiseFileError.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sguntepe <sguntepe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sguntepe <@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/28 05:19:29 by sguntepe          #+#    #+#             */
-/*   Updated: 2022/12/28 05:19:29 by sguntepe         ###   ########.fr       */
+/*   Created: 2023/01/19 13:33:13 by sguntepe          #+#    #+#             */
+/*   Updated: 2023/06/21 18:52:06 by sguntepe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
+#include "../../../Include/minishell.h"
+
+/*
+	check_directory_error ->verilen dosya adının bir dizin olup olmadığını kontrol eder. 
+	Eğer en az bir '/' karakteri varsa, ad bir dizin olarak kabul edilir ve hataya yol açar. 
+	Eğer yoksa, ad bir dosya adı olarak kabul edilir ve işlem devam eder.
+*/
 
 int	check_directory_error(char *file_name)
 {
@@ -27,6 +33,18 @@ int	check_directory_error(char *file_name)
 	}
 	return (1);
 }
+
+/*
+	raise_file_error -> bir dosya açma hatası oluştuğunda, dosyanın açılmamasını ve
+	hata mesajının yazdırılmasını sağlar.
+	Dosyanın dizin hatasını kontrol eder. 
+	(") -> "-bash: : No such file or directory" hata mesajını yazdırır.
+	($) -> belirsiz bir yönlendirmeye işaret eden "-bash: [dosya adı]: ambiguous redirect" 
+	hata mesajını yazdırır.
+	Dosya açma hatası oluştuğunda, file->fd, SSTDERR (standard error stream) değerine atanır
+	ve *file_output da SSTDERR değerine eşitlenir.
+
+*/
 
 int	raise_file_error(t_filelist *file, int *file_output)
 {

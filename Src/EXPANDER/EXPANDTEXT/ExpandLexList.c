@@ -3,14 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ExpandLexList.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sguntepe <sguntepe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sguntepe <@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/28 02:50:19 by sguntepe          #+#    #+#             */
-/*   Updated: 2022/12/28 02:50:19 by sguntepe         ###   ########.fr       */
+/*   Created: 2023/01/19 13:29:51 by sguntepe          #+#    #+#             */
+/*   Updated: 2023/06/21 18:52:06 by sguntepe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
+#include "../../../Include/minishell.h"
+
+/*
+	expand_text -> Her karakteri tarar. her karakterin tipine göre 
+	farklı işlemler yapar. Tek tırnak ya da çift tırnak
+	işaretiyle çevrelenmiş metinleri ve $ veya ~ karakterleriyle başlayan
+	metinleri tespit eder.
+	Bu metinler daha sonra ilgili genişletme işlevine gönderilir
+	sonuç, ilgili karakter yerine yerleştirilir.
+*/
 
 void	expand_values_from_lexlist(void)
 {

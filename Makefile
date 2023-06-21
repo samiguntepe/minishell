@@ -1,23 +1,8 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: sguntepe <@student.42kocaeli.com.tr>       +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/06/21 15:29:58 by sguntepe          #+#    #+#              #
-#    Updated: 2023/06/21 15:29:58 by sguntepe         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
+USERNAME = sguntepe
 NAME = minishell
-
-CFLAGS = $(INCLUDE) -Wall -Werror -Wextra
-INCLUDE = -IInclude/
-ifeq ($(shell uname), Darwin)
-INCLUDE = -IInclude/ -I/Users/sguntepe/goinfre/homebrew/Cellar/readline/8.2.1/include
-endif
-CC = gcc
+CFLAGS = $(INCLUDE) -Wall -Werror -Wextra -g
+INCLUDE = -IInclude/ -I/Users/$(USERNAME)/goinfre/homebrew/Cellar/readline/8.2.1/include
+CC = gcc -g
 
 SRC = $(shell find src -name "*.c")
 SRCDIR = $(sort $(dir $(SRC)))
@@ -34,12 +19,7 @@ all: outfolder $(NAME)
 	@echo "Done"
 
 $(NAME): $(OBJ)
-ifeq ($(shell uname), Darwin)
-	@$(CC) $(CFLAGS) $(OBJ) -lreadline -L /Users/sguntepe/goinfre/homebrew/Cellar/readline/8.2.1/lib -o $(NAME)
-endif
-ifeq ($(shell uname), Linux)
-	@$(CC) $(CFLAGS) $(OBJ) -lreadline -o $(NAME)
-endif
+	@$(CC) $(CFLAGS) $(OBJ) -lreadline -L /Users/$(USERNAME)/goinfre/homebrew/Cellar/readline/8.2.1/lib -o $(NAME)
 
 outfolder:
 	@echo "Building Minishell"

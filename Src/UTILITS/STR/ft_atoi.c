@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sguntepe <@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/28 08:36:03 by sguntepe          #+#    #+#             */
-/*   Updated: 2023/06/21 15:36:18 by sguntepe         ###   ########.fr       */
+/*   Created: 2023/01/19 13:34:27 by sguntepe          #+#    #+#             */
+/*   Updated: 2023/06/21 18:52:06 by sguntepe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
+#include "../../../Include/minishell.h"
 
 int	ft_atoi(const char *str)
 {

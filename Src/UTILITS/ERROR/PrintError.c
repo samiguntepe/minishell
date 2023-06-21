@@ -3,14 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   PrintError.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sguntepe <sguntepe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sguntepe <@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/28 05:31:23 by sguntepe          #+#    #+#             */
-/*   Updated: 2022/12/28 05:31:23 by sguntepe         ###   ########.fr       */
+/*   Created: 2023/01/19 13:33:59 by sguntepe          #+#    #+#             */
+/*   Updated: 2023/06/21 18:52:06 by sguntepe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
+#include "../../../Include/minishell.h"
+
+/*
+  Eğer hata varsa bu fonksiyona gelinir. Print_error fonksiyonuna
+  gelindikten sonra hata kodu 2 olarak atanır ve freeleme işlemine başlanır.
+*/
 
 int	print_lex_error(t_lexlist *lex_list)
 {
@@ -20,6 +25,9 @@ int	print_lex_error(t_lexlist *lex_list)
 	free_lexer_without_heradoc(lex_list);
 	return (0);
 }
+
+/* Hata çıktısı sağladığımız fonksiyon.*/
+
 
 void	print_error(char *ptr1, char *ptr2, char *ptr3)
 {

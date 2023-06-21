@@ -5,29 +5,40 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sguntepe <@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/28 02:08:09 by sguntepe          #+#    #+#             */
-/*   Updated: 2023/06/21 15:36:18 by sguntepe         ###   ########.fr       */
+/*   Created: 2023/01/19 13:31:50 by sguntepe          #+#    #+#             */
+/*   Updated: 2023/06/21 18:52:06 by sguntepe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
+#include "../Include/minishell.h"
+
+void	init_core(char **env)
+{
+	fill_envs(env);
+	set_metachars();
+	g_core.exec_output = 0;
+}
 
 int	main(int argc, char **argv, char **env)
 {
-	(void)argc;
 	(void)argv;
+	if (argc != 1)
+	{
+		printf("You do not need to enter args...\n");
+		return (0);
+	}
 	init_core(env);
-	signal(SIGINT, &sig_handler);
+	signal(SIGINT, signals);
+	signal(SIGQUIT, SIG_IGN);
 	while (1)
 	{
-		update_loop();
-		g_core.cmd = readline(g_core.title.full_title);
-		exit_signal_check();
+		g_core.cmd = readline("\033[0;34mminishell-> \033[0m");
 		lexer();
 		expander();
 		parser();
 		executer();
-		update_history(g_core.cmd);
+		add_history(g_core.cmd);
+		exit_signal_check();
 		free_for_loop();
 	}
 	free_core();

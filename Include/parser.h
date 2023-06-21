@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parser.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sguntepe <sguntepe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sguntepe <@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/28 06:03:07 by sguntepe          #+#    #+#             */
-/*   Updated: 2022/12/28 06:03:07 by sguntepe         ###   ########.fr       */
+/*   Created: 2023/01/19 13:26:57 by sguntepe          #+#    #+#             */
+/*   Updated: 2023/06/21 18:52:06 by sguntepe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,5 @@ int			raise_file_error(t_filelist *file, int *file_output);
 //FREEPARSER
 void		free_parser(void);
 void		free_filelist(t_filelist *files);
-
-void		print_files(t_filelist *temp_filelist);
-void		print_parser(void);
 
 #endif

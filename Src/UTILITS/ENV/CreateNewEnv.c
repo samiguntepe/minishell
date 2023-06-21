@@ -3,19 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   CreateNewEnv.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sguntepe <sguntepe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sguntepe <@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/28 05:32:46 by sguntepe          #+#    #+#             */
-/*   Updated: 2022/12/28 05:32:46 by sguntepe         ###   ########.fr       */
+/*   Created: 2023/01/19 13:33:30 by sguntepe          #+#    #+#             */
+/*   Updated: 2023/06/21 18:52:06 by sguntepe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
+#include "../../../Include/minishell.h"
 
-/*
-	mainde 3.parametre olarak aldığımız env değişkenini alır
-	ve bağlı liste yapısına doldurur.
-*/
+/*Main fonksiyonundaki 3. parametreyi bağlı listeye yerleştirir(doldurur).*/
 void	fill_envs(char **env)
 {
 	while (env && *env)
@@ -23,9 +20,9 @@ void	fill_envs(char **env)
 }
 
 /*
-	bağlı liste yapısında henüz bir bode yok is onu yaratır
-	var is sonuna gider ve ardına yeni bir node ekler.
-	Gelen parametreyi oraya ekler.
+	Eğer bağlı liste yoksa kendisi oluşturur ve ilkk başta çevresel değikeni alır. 
+	Daha sonra '=' den sonrasında karakter var mı kontrol edilir eğer varsa ft_strdup ile
+	son düğümğn contentine kopyalanır.
 */
 t_env	*add_newenv(t_env **env_table, char *env)
 {

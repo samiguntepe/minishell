@@ -3,14 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   GetArrayLen.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sguntepe <sguntepe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sguntepe <@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/28 05:25:40 by sguntepe          #+#    #+#             */
-/*   Updated: 2022/12/28 05:25:40 by sguntepe         ###   ########.fr       */
+/*   Created: 2023/01/19 13:36:47 by sguntepe          #+#    #+#             */
+/*   Updated: 2023/06/21 18:52:06 by sguntepe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
+#include "../../../Include/minishell.h"
+
+/*
+  girilen argümanların sayısını bulmamızı sağlayan fonksiyondur.
+*/
 
 int	get_array_len(char **array)
 {

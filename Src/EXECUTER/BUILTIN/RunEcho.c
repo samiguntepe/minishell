@@ -3,14 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   RunEcho.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sguntepe <sguntepe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sguntepe <@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/28 05:41:52 by sguntepe          #+#    #+#             */
-/*   Updated: 2022/12/28 05:41:52 by sguntepe         ###   ########.fr       */
+/*   Created: 2023/01/19 13:27:27 by sguntepe          #+#    #+#             */
+/*   Updated: 2023/06/21 18:52:06 by sguntepe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
+#include "../../../Include/minishell.h"
+
+/* 
+  Bu fonksiyon bizim echo yani çıktı almamızı sağlayan fonksiyondur.
+  eğer '-n' parametresi var ise is_n parametresi 1 olur ve newline 
+  bastırılmadan çıktı sağlanır. Eğer birden fazla yazdırılacak argüman
+  var ise ikinci if sorgusunda space boşluğu bırakılıp while döngüsünde 
+  yazdırma işlemi devam ettirilir.
+*/
 
 void	run_echo(t_cmdlist *cmd_node)
 {
@@ -33,4 +41,5 @@ void	run_echo(t_cmdlist *cmd_node)
 	}
 	if (!is_n)
 		write(cmd_node->outfile, "\n", 1);
+	g_core.exec_output = 0;
 }

@@ -3,14 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   FillCmdTable.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sguntepe <sguntepe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sguntepe <@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/28 02:55:57 by sguntepe          #+#    #+#             */
-/*   Updated: 2022/12/28 02:55:57 by sguntepe         ###   ########.fr       */
+/*   Created: 2023/01/19 13:32:23 by sguntepe          #+#    #+#             */
+/*   Updated: 2023/06/21 18:52:06 by sguntepe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
+#include "../../../Include/minishell.h"
+
+/*
+	fill_cmdtable -> fill_cmdnode ile düğümlere komut öğelerini ekler.
+*/
 
 void	fill_cmdtable(void)
 {
@@ -29,6 +33,11 @@ void	fill_cmdtable(void)
 		temp_cmdtable = temp_cmdtable->next;
 	}
 }
+
+/*
+	fill_cmdnode -> komut düğümünün yolunu (path) oluşturmak için kullanılır.
+	Bunu create_path işlevini kullanarak yapar.
+*/
 
 void	fill_cmdnode(t_cmdlist *node, t_lexlist **lex_list)
 {

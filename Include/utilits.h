@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utilits.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sguntepe <sguntepe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sguntepe <@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/28 06:09:52 by sguntepe          #+#    #+#             */
-/*   Updated: 2022/12/28 06:09:52 by sguntepe         ###   ########.fr       */
+/*   Created: 2023/01/19 13:27:08 by sguntepe          #+#    #+#             */
+/*   Updated: 2023/06/21 18:52:06 by sguntepe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,10 +56,6 @@ int		get_array_len(char **array);
 int		str_compare(char *str1, char *str2);
 
 size_t	trim_spaces(char **cmd_line);
-
-//TITLE
-void	set_title(void);
-void	change_title(void);
 
 //ERROR
 int		print_lex_error(t_lexlist *lex_list);

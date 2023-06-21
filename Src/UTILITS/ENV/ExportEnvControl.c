@@ -3,14 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   ExportEnvControl.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sguntepe <sguntepe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sguntepe <@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/28 05:34:02 by sguntepe          #+#    #+#             */
-/*   Updated: 2022/12/28 05:34:02 by sguntepe         ###   ########.fr       */
+/*   Created: 2023/01/19 13:33:35 by sguntepe          #+#    #+#             */
+/*   Updated: 2023/06/21 18:52:06 by sguntepe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
+/*
+	Çevresel değişkenin adının doğruluğunu kontrol eder.
+
+	Örneğin, env_arg_control("MY_VAR=123") şeklinde bir çağrı yaptığımızda, env_name_control
+	fonksiyonu MY_VAR=123 stringinin geçerli bir environment variable adı olduğunu doğrular 
+	ve MY_VAR=123 stringinin = karakterinden sonraki kısmını (yani 123'ü) env_arg_control 
+	fonksiyonuna geri döndürür. env_arg_control fonksiyonu, env_name_control fonksiyonunun 
+	doğru bir değer döndürdüğünü kontrol eder ve 1 değerini döndürür.
+*/
+
+#include "../../../Include/minishell.h"
+
+/*
+  Bu fonksiyon çevresel değişken olarak eklemek istediğimiz argümanın adının kontrolünü sağlayan
+  fonksiyondur. Eğer geçerli karakterler yok ise NULL döndürür. Eğer karakterler geçerli ise 
+  env değişkenini geri döndürür.
+*/
 
 char	*valid_env(char *env)
 {
@@ -29,6 +45,13 @@ char	*valid_env(char *env)
 	return (env);
 }
 
+/*
+  Bu fonksiyon çevresel değişkenlerin isim kontrolünü yapmamızı sağlar. Eğer
+  girilen argümanın içerisi boş ise veya boşluk veya = var ise null döndürür.
+  Daha sonra komut satırını kontrol etmek için valid_env fonksiyonuna gidilir.
+  
+*/
+
 char	*env_name_control(char *env)
 {
 	char	*env_temp;
@@ -44,6 +67,12 @@ char	*env_name_control(char *env)
 	else
 		return (env_temp);
 }
+
+/*
+  env_name_control kontrolünden sonra eğer null döndürmez ise girilen argüman
+  doğru olduğu için daha fazla işlem yapmaz ama doğru değil ise argümanın hatalı
+  olduğunu belirtip gerekli hata kodunu döndürür.
+*/
 
 int	env_arg_control(char *env)
 {

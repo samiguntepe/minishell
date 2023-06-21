@@ -3,14 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   CreatePath.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sguntepe <sguntepe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sguntepe <@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/28 02:55:37 by sguntepe          #+#    #+#             */
-/*   Updated: 2022/12/28 02:55:37 by sguntepe         ###   ########.fr       */
+/*   Created: 2023/01/19 13:32:19 by sguntepe          #+#    #+#             */
+/*   Updated: 2023/06/21 18:52:06 by sguntepe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
+#include "../../../Include/minishell.h"
+
+/*
+	create_path -> Bir t_lexlist listesinin type'ı TEXT olan öğelerinin sayısını
+	hesaplar ve bu sayı kadar boyutlu bir char tipi çift işaretçisi (char **) oluşturur.
+	Bu işaretçi, komutun yolunu (path) ve argümanlarını tutmak için kullanılacak.
+*/
 
 char	**create_path(t_lexlist *lex_list)
 {

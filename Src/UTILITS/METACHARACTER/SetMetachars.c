@@ -3,20 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   SetMetachars.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sguntepe <sguntepe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sguntepe <@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/28 05:29:06 by sguntepe          #+#    #+#             */
-/*   Updated: 2022/12/28 05:29:06 by sguntepe         ###   ########.fr       */
+/*   Created: 2023/01/19 13:34:18 by sguntepe          #+#    #+#             */
+/*   Updated: 2023/06/21 18:52:06 by sguntepe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
+#include "../../../Include/minishell.h"
 
-/*
-	global degiskende ki metachars degiskenine 2 boyutlu bir dizi olusturur
-	ve icerisine teker teker belirlenen metakarakterleri atar.
-	metakarakterler sirasiyla ">>", "<<", "<", ">", "|"'dir
-*/
+/*Metakarakterleri tanımlama yapıp meta_list değişkeninin içine atama yapıyor*/
 void	set_metachars(void)
 {
 	char	**meta_list;

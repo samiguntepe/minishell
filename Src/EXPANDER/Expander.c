@@ -1,37 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   StrAddChar.c                                       :+:      :+:    :+:   */
+/*   Expander.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sguntepe <@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/19 13:36:56 by sguntepe          #+#    #+#             */
+/*   Created: 2023/01/19 13:30:01 by sguntepe          #+#    #+#             */
 /*   Updated: 2023/06/21 18:52:06 by sguntepe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../Include/minishell.h"
+#include "../../Include/minishell.h"
 
 /*
-	str_addchar -> verilen bir karakter dizisine yeni bir karakter ekler.
+	expander => parser tarafından belirlenen parametreleri genişletir ve komutu
+	çalıştırmak için gereken bilgileri toplar.
+	örneğin "~/tmp" -> "/home/kullanıcıadı/tmp"
+			"ls *" -> ls'i tüm dosya ve klasörlerle çalışacak şekilde genişletir.
 */
 
-void	str_addchar(char **dst, char c)
+void	expander(void)
 {
-	char	*ptr;
-	char	*holder_ptr;
-	char	*holder_dst;
-	int		len;
-
-	len = ft_strlen(*dst) + 1;
-	ptr = (char *)malloc(sizeof(char) * (len + 1));
-	holder_ptr = ptr;
-	holder_dst = *dst;
-	while (holder_dst && *holder_dst)
-		*(holder_ptr++) = *(holder_dst++);
-	*(holder_ptr++) = c;
-	*(holder_ptr++) = 0;
-	if (*dst)
-		free(*dst);
-	*dst = ptr;
+	if (g_core.exec_output == 2)
+		return ;
+	expand_values_from_lexlist();
+	clear_void_contents();
 }

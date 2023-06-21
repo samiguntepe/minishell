@@ -3,14 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   RunUnset.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sguntepe <sguntepe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sguntepe <@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/28 05:41:07 by sguntepe          #+#    #+#             */
-/*   Updated: 2022/12/28 05:41:07 by sguntepe         ###   ########.fr       */
+/*   Created: 2023/01/19 13:27:52 by sguntepe          #+#    #+#             */
+/*   Updated: 2023/06/21 18:52:06 by sguntepe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
+#include "../../../Include/minishell.h"
+
+/*
+	unset : ortam değişkenlerini kaldırmak için kullanılır.
+
+	İlk olarak, "path" dizisinin uzunluğunu hesaplar.
+	While içinde, mevcut ortam değişkeninin geçerli olup olmadığını "env_arg_control"
+	fonksiyonunu çağırarak kontrol eder. Geçerli değilse, "print_error" ile hata mesajı 
+	yazdırır ve bir hata oluştuğunu belirtmek için global "g_core.exec_output" değişkenini
+	1 olarak ayarlar. Geçerli ise, ortam değişkenini kaldırmak için "delete_env" 
+	fonksiyonunu çağırır ve başarıyı belirtmek için global "g_core.exec_output" değişkenini 
+	0 olarak ayarlar.
+*/
 
 void	run_unset(t_cmdlist *cmd_node)
 {
@@ -31,10 +43,17 @@ void	run_unset(t_cmdlist *cmd_node)
 				continue ;
 			}
 			else
+			{
 				delete_env(*temp_name);
+				g_core.exec_output = 0;
+			}		
 		}
 	}
 }
+
+/*
+  Tüm envleri gezerek eşleşen env'yi freeleyerek silmemizi sağlayan fonksiyondur.
+*/
 
 void	delete_env(char *name)
 {
