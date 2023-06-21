@@ -6,16 +6,11 @@
 /*   By: sguntepe <@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 13:31:27 by sguntepe          #+#    #+#             */
-/*   Updated: 2023/06/21 18:52:06 by sguntepe         ###   ########.fr       */
+/*   Updated: 2023/06/21 19:44:21 by sguntepe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../Include/minishell.h"
-
-/*
-  lex_list olduğu sürece bu fonksiyona girilir. ve tüm nodeleri geze geze 
-  hata var mı yok mu genel kontrolü burada başlar.
-*/
 
 void	syntax_check(void)
 {
@@ -36,13 +31,6 @@ void	syntax_check(void)
 			lex_list = NULL;
 	}
 }
-
-/*
-  Bu fonksiyon 3 farklı error kontrolü yapar. İlk sorguya birden fazla pipe karakteri
-  varsa girilir ve hata çıktısı sağlanır. İkinci sorguda dosyanın açılabilmesi için
-  gerekli bilgiler var mı yok mu kontrolü yapılır. Üçüncü sorguda ise pipe(boru yolu)
-  hatası var mı yok mu onun kontrolünü yapar.
-*/
 
 int	syntax_error_check(t_lexlist *lex_list)
 {

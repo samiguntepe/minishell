@@ -6,21 +6,11 @@
 /*   By: sguntepe <@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 13:32:14 by sguntepe          #+#    #+#             */
-/*   Updated: 2023/06/21 18:52:06 by sguntepe         ###   ########.fr       */
+/*   Updated: 2023/06/21 19:45:36 by sguntepe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../Include/minishell.h"
-
-/*
-	create_new_filelist -> t_cmdlist yapısındaki bir düğüm ve t_lexlist yapısındaki
-	bir işaretçi alır. Düğüm yürütülecek olan komutu ve ilgili dosya listesini içerir.
-	İşaretçi komut dizisindeki metinleri ve özel karakterleri içeren bir liste işaretçisidir.
-
-	(*lex_list)->next işaretçisi kullanılarak dosya adı içeriği elde edilir ve filename 
-	değişkenine atanır. Ancak, (*lex_list)->next NULL işaretçisi ise, dosya adı atanmaz.
-
-*/
 
 int	create_new_filelist(t_cmdlist *node, t_lexlist **lex_list)
 {
@@ -44,14 +34,6 @@ int	create_new_filelist(t_cmdlist *node, t_lexlist **lex_list)
 		(*lex_list) = (*lex_list)->next;
 	return (1);
 }
-
-/*
-	add_filelist -> Dosya listesine yeni bir dosya eklenir. Bu yeni dosyanın dosya adı,
-	filename değişkeninden ve özel karakter, (*lex_list)->content işaretçisi içeriğinden elde edilir. 
-	
-	temp_filelist->> işaret edilen dosyanın özellikleri ayarlar.
-
-*/
 
 t_filelist	*add_filelist(t_filelist **file_list, char *filename, char *meta)
 {

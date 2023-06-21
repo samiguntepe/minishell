@@ -6,17 +6,11 @@
 /*   By: sguntepe <@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 13:30:31 by sguntepe          #+#    #+#             */
-/*   Updated: 2023/06/21 18:52:06 by sguntepe         ###   ########.fr       */
+/*   Updated: 2023/06/21 19:45:12 by sguntepe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../Include/minishell.h"
-
-/*
-  bu fonksiyon girilen metindeki ilk karakter ile diğer karakterleri 
-  karşılaştırıyor eğer bir eşitlik var ise o uzunluğu döndürüyor. Örnek
-  olarak "ali eren"asd metnini kullanabiliriz. Buradaki uzunluk değeri 9'dur.
-*/
 
 size_t	get_quotelen(char *cmd_line)
 {
@@ -33,11 +27,6 @@ size_t	get_quotelen(char *cmd_line)
 	}
 	return (count);
 }
-
-/*
-  Bu fonksiyon terminale girilen komut satırının uzunluğunu alır.
-  bu kodu yapma sebeplerimiz arasında malloc ile yer açmak için uzunluğu bulmak.
-*/
 
 size_t	get_cmdlen(char *cmd_line)
 {

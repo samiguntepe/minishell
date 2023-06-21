@@ -6,16 +6,11 @@
 /*   By: sguntepe <@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 13:28:51 by sguntepe          #+#    #+#             */
-/*   Updated: 2023/06/21 18:52:06 by sguntepe         ###   ########.fr       */
+/*   Updated: 2023/06/21 19:43:19 by sguntepe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../Include/minishell.h"
-
-/*
-	expand_cmd ->  verilen bir komut satırı argümanının PATH çevresel değişkenindeki 
-	değerlerle genişletilmesini sağlar.
-*/
 
 void	expand_cmd(char **dst)
 {
@@ -33,16 +28,6 @@ void	expand_cmd(char **dst)
 	}
 }
 
-/*
-	expand_from_env_value -> Komut yürütüldüğünde kullanılan PATH değişkeninin değerini genişletmek 
-	için kullanılır. her yolun sonunda ':' karakteriyle bittiği varsayımına dayanarak çalışır.
-	yani -> /usr/bin:/bin:/usr/sbin:/sbin bu gibi PATH'i gezer.
-
-	access -> kullanıcının dosyayı okuyabilme yetkisine sahip olup olmadığını kontrol eder. 
-	işlem yapılabiliyorsa 0, yapılamıyorsa -1 döner ve errno değişkeni ayarlanır.
-	F_OK -> existence(varoluş)
-*/
-
 void	expand_from_env_value(char **dst, char *content)
 {
 	char	*control_ptr;
@@ -59,11 +44,6 @@ void	expand_from_env_value(char **dst, char *content)
 		free(control_ptr);
 	}
 }
-
-/*
-	get_arg_from_env_value -> , PATH değişkeninin bir parçasını ve genişletilecek bir argüman adını alır. 
-	':' karakterine kadar olan tüm karakterleri ptr'ye kopyalar. Sonra ptr'ye "/" karakteri eklenir.
-*/
 
 char	*get_arg_from_env_value(char **envs, char *search_arg_name)
 {

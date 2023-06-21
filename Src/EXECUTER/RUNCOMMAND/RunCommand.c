@@ -6,18 +6,11 @@
 /*   By: sguntepe <@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 13:28:29 by sguntepe          #+#    #+#             */
-/*   Updated: 2023/06/21 18:52:06 by sguntepe         ###   ########.fr       */
+/*   Updated: 2023/06/21 19:42:08 by sguntepe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../Include/minishell.h"
-
-/*
-  bu fonksiyon bizim pipe dan dolayı birden fazla argümanı çalışmamızı 
-  sağlayan fonksiyonun başlangıcıdır. Bu fonksiyon cmd list devam ettiği
-  sürece çalışır. Eğer cmd_list'i forkladıktan sonra child_process'i 
-  run_process fonksiyonuna göndeririz.
-*/
 
 void	run_multiple_command(t_cmdlist *cmd_list)
 {

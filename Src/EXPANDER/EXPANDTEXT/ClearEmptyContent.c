@@ -6,16 +6,11 @@
 /*   By: sguntepe <@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 13:29:00 by sguntepe          #+#    #+#             */
-/*   Updated: 2023/06/21 18:52:06 by sguntepe         ###   ########.fr       */
+/*   Updated: 2023/06/21 19:42:39 by sguntepe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../Include/minishell.h"
-
-/*
-	Lexer tarafından oluşturulan listedeki boş olan lex listelerini (tokenları) siler. 
-	Listede gereksiz ve boş bir dizi elemanın kalmasını önlemeye yardımcı olur.
-*/
 
 void	clear_void_contents(void)
 {

@@ -6,24 +6,11 @@
 /*   By: sguntepe <@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 13:30:11 by sguntepe          #+#    #+#             */
-/*   Updated: 2023/06/21 18:52:06 by sguntepe         ###   ########.fr       */
+/*   Updated: 2023/06/21 19:44:32 by sguntepe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../Include/minishell.h"
-
-/*
-                                        ## (*METACHARS - 1) ##
-  Metachars - 1 demenin sebebi, '>>' ve '<<' metakarakterlerde ascii kodu tek '<' '>' 2 ile çarpıldığı için 
-  '|' karakteri ile çakışma oluyor ama biz bunu istemediğimiz için hepsini 1 eksiltiyoruz ve bu sefer çakışma
-  ortadan kalkıyor.
-*/
-
-/*
-  Bu kod, girdi olarak verilen bir metni sözdizimsel olarak analiz edip her sözcüğün tipini belirler.
-  Bu şekilde, program hangi sözcüğün bir yerleşik fonksiyon olduğunu 
-  veya hangi sözcüğün bir boru veya yönlendirme operatörü olduğunu anlayabilir. 
-*/
 
 void	classify(t_lexlist *lex_table)
 {

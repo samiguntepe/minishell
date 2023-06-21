@@ -6,16 +6,11 @@
 /*   By: sguntepe <@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 13:36:51 by sguntepe          #+#    #+#             */
-/*   Updated: 2023/06/21 18:52:06 by sguntepe         ###   ########.fr       */
+/*   Updated: 2023/06/21 19:39:59 by sguntepe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../Include/minishell.h"
-
-/*
-	own_strjoin -> verilen iki karakter dizisini birleştirir ve sonucu geri döndürür.
-	Yeni karakter dizisi, dinamik olarak ayrılan bellekte saklanır.
-*/
 
 void	own_strjoin(char **dst, char *src)
 {

@@ -6,17 +6,11 @@
 /*   By: sguntepe <@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 13:32:19 by sguntepe          #+#    #+#             */
-/*   Updated: 2023/06/21 18:52:06 by sguntepe         ###   ########.fr       */
+/*   Updated: 2023/06/21 19:45:39 by sguntepe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../Include/minishell.h"
-
-/*
-	create_path -> Bir t_lexlist listesinin type'ı TEXT olan öğelerinin sayısını
-	hesaplar ve bu sayı kadar boyutlu bir char tipi çift işaretçisi (char **) oluşturur.
-	Bu işaretçi, komutun yolunu (path) ve argümanlarını tutmak için kullanılacak.
-*/
 
 char	**create_path(t_lexlist *lex_list)
 {

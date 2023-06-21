@@ -6,13 +6,11 @@
 /*   By: sguntepe <@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 13:30:38 by sguntepe          #+#    #+#             */
-/*   Updated: 2023/06/21 18:52:06 by sguntepe         ###   ########.fr       */
+/*   Updated: 2023/06/21 19:44:58 by sguntepe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../Include/minishell.h"
-
-/*bu fonksiyon bizim << karakterini atlamamızı sağlar.*/
 
 int	skip_heradoc(t_lexlist **lex, t_lexlist **temp, t_lexlist *stop, int *flag)
 {
@@ -28,12 +26,6 @@ int	skip_heradoc(t_lexlist **lex, t_lexlist **temp, t_lexlist *stop, int *flag)
 	}
 	return (0);
 }
-
-/*
-  Eğer file_error_check fonksiyonunda if döngünün içerisine girilirse bu 
-  fonksiyona gelinir. Eğer skip_heradoc 1 döndürürse while tekrarlanır.
-  Eğer 0 döndürürse lexer içinde geze geze freeleme işlemi yapar.
-*/
 
 void	free_lexer_without_heradoc(t_lexlist *stop_list)
 {
@@ -62,11 +54,6 @@ void	free_lexer_without_heradoc(t_lexlist *stop_list)
 			lexer = temp_lexer->next;
 	}
 }
-
-/*
-	Fonksiyon, g_core.lex_table değişkenine atanan lexer yapısının başlangıcına
-	işaret eder ve bu yapının tüm elemanlarını dolaşarak belleklerini serbest bırakır. 
-*/
 
 void	free_lexer(void)
 {

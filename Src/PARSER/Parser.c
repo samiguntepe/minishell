@@ -6,17 +6,11 @@
 /*   By: sguntepe <@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 13:32:36 by sguntepe          #+#    #+#             */
-/*   Updated: 2023/06/21 18:52:06 by sguntepe         ###   ########.fr       */
+/*   Updated: 2023/06/21 19:46:58 by sguntepe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../Include/minishell.h"
-
-/*
-	Lexer tarafından ayıklanan parçaları kullanarak geçerli komut satırı oluşturur.
-	Parçaları inceler ve bu parçaların anlamlı bir bütün oluşturduğundan emin olur.
-	örn - cd komutu için bir parametre alacğı belirlenir.
-*/
 
 void	parser(void)
 {

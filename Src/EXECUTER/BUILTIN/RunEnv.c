@@ -6,17 +6,11 @@
 /*   By: sguntepe <@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 13:27:32 by sguntepe          #+#    #+#             */
-/*   Updated: 2023/06/21 18:52:06 by sguntepe         ###   ########.fr       */
+/*   Updated: 2023/06/21 19:41:08 by sguntepe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../Include/minishell.h"
-
-/*
-	tüm environment variable'ları yazdırmakla sorumludur. Fonksiyon, cmd_node 
-	parametresi olarak bir komut düğümü alır ve cmd_node->outfile üzerindeki 
-	çıktıya environment variable'larını yazdırır.
-*/
 
 void	run_env(t_cmdlist *cmd_node)
 {

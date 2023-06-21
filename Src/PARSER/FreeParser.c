@@ -6,17 +6,11 @@
 /*   By: sguntepe <@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 13:32:30 by sguntepe          #+#    #+#             */
-/*   Updated: 2023/06/21 18:52:06 by sguntepe         ###   ########.fr       */
+/*   Updated: 2023/06/21 19:46:54 by sguntepe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../Include/minishell.h"
-
-/*
-	Komut satırında verilen girdilerin ayrıştırılması sonucu oluşan ağaç yapısını 
-	temizlemek için kullanılır. Fonksiyon, tüm t_cmdlist düğümlerini dolaşır ve her
-	düğüm için ayrı ayrı bellekten tahsis edilmiş alanları serbest bırakır.
-*/
 
 void	free_parser(void)
 {
@@ -37,12 +31,6 @@ void	free_parser(void)
 	}
 	g_core.cmd_table = NULL;
 }
-
-/*
-	Tüm dosya listesi düğümlerini dolaşır ve her düğüm için ayrı ayrı bellekten 
-	tahsis edilmiş alanları serbest bırakır. Ayrıca, her düğümün fd özelliği STDERRden
-	büyükse, yani dosya tanımlayıcı bir standart hata değilse, dosyayı kapatır.
-*/
 
 void	free_filelist(t_filelist *files)
 {

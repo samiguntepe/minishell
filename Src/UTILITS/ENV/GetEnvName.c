@@ -6,13 +6,12 @@
 /*   By: sguntepe <@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 13:33:41 by sguntepe          #+#    #+#             */
-/*   Updated: 2023/06/21 18:52:06 by sguntepe         ###   ########.fr       */
+/*   Updated: 2023/06/21 19:38:59 by sguntepe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../Include/minishell.h"
 
-/*Çevresel değişkenlere malloc ile yer ayırıp bunları hafızada tutup geri dödürüyoruz.*/
 char	*get_env_name(char *content)
 {
 	int		env_name_len;
@@ -30,7 +29,6 @@ char	*get_env_name(char *content)
 	return (name);
 }
 
-/*malloc ile yer açmak için oluşturduğumuz bir fonksiyon. Bir nevi strlen diyebiliriz.*/
 int	get_env_name_count(char *env_arg)
 {
 	int	count;

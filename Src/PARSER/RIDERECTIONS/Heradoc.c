@@ -6,19 +6,11 @@
 /*   By: sguntepe <@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 13:32:53 by sguntepe          #+#    #+#             */
-/*   Updated: 2023/06/21 18:52:06 by sguntepe         ###   ########.fr       */
+/*   Updated: 2023/06/21 19:46:06 by sguntepe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../Include/minishell.h"
-
-
-/*
-	run_heradocs -> stdin'den gelen girdiyi yönlendirmek 
-	için << bulunana kadar bir komut listesindeki dosya listesinde dolaşır. 
-	Heredoc bulunduğunda, ilgili komut listesi düğümü ve dosya listesi düğümü,
-	read_heradoc() fonksiyonuna geçirilir.
-*/
 
 void	run_heradocs(t_cmdlist *node)
 {
@@ -40,10 +32,6 @@ void	run_heradocs(t_cmdlist *node)
 		node = node->next;
 	}
 }
-
-/*
-	read_heradoc -> heredoc'u okur ve içeriğini bir dize olarak kaydeder. 
-*/
 
 int	read_heradoc(t_cmdlist *node, char *eof)
 {
@@ -68,10 +56,6 @@ int	read_heradoc(t_cmdlist *node, char *eof)
 	return (1);
 }
 
-/*
-	set_heradoc_value -> Heradoc değerlerini almak ve node yapısına kaydetmek için kullanılır.
-*/
-
 void	set_heradoc_value(t_cmdlist *node, int *fd)
 {
 	char	ptr[1];
@@ -88,12 +72,6 @@ void	set_heradoc_value(t_cmdlist *node, int *fd)
 	own_strjoin(&g_core.cmd, node->heradoc_values);
 }
 
-/*
-	fill_heradoc -> Fork işleminde çağrılır ve bir child process yaratır. Belirtilen EOF belirtecine
-	kadar standart girdiden girdi okur ve geçici bir dosyaya yazar. Sonra bu dosyanın içeriği
-	parent processe geri döndürülür.
-*/
-
 void	fill_heradoc(char *eof, int *fd)
 {
 	char	*heradoc_lines;
@@ -107,12 +85,6 @@ void	fill_heradoc(char *eof, int *fd)
 	free_core();
 	exit(EXIT_SUCCESS);
 }
-
-/*
-	get_heradoc_values -> kullanıcı tarafından girilen heradoc değerlerini okumak için kullanılır.
-	'>' karakteriyle başlayan bir satır okunur ve eof karakterine kadar olan tüm satırlar bir char 
-	dizisinde birleştirilir.
-*/
 
 char	*get_heradoc_values(char *eof)
 {

@@ -6,19 +6,11 @@
 /*   By: sguntepe <@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 13:27:27 by sguntepe          #+#    #+#             */
-/*   Updated: 2023/06/21 18:52:06 by sguntepe         ###   ########.fr       */
+/*   Updated: 2023/06/21 19:41:04 by sguntepe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../Include/minishell.h"
-
-/* 
-  Bu fonksiyon bizim echo yani çıktı almamızı sağlayan fonksiyondur.
-  eğer '-n' parametresi var ise is_n parametresi 1 olur ve newline 
-  bastırılmadan çıktı sağlanır. Eğer birden fazla yazdırılacak argüman
-  var ise ikinci if sorgusunda space boşluğu bırakılıp while döngüsünde 
-  yazdırma işlemi devam ettirilir.
-*/
 
 void	run_echo(t_cmdlist *cmd_node)
 {

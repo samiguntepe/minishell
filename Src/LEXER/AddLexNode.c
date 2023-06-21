@@ -6,17 +6,11 @@
 /*   By: sguntepe <@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 13:30:16 by sguntepe          #+#    #+#             */
-/*   Updated: 2023/06/21 18:52:06 by sguntepe         ###   ########.fr       */
+/*   Updated: 2023/06/21 19:44:26 by sguntepe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../Include/minishell.h"
-
-/*
-  Bu kod eğer cmd_table değişkeni yoksa oluşturur daha sonra bağlı listenin sonuna yeni 
-  yeni bir düğüm ekler bunu yapmamızın amacı kullanıcı bir komut satırına yeni bir argüman 
-  eklediğinde veya yeni bir dosya yolunu belirttiğinde, bu fonksiyonun kullanılabilmesidir.
-*/
 
 t_lexlist	*add_new_lex_node(t_lexlist **cmd_table)
 {

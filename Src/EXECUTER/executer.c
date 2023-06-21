@@ -6,17 +6,11 @@
 /*   By: sguntepe <@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 13:28:06 by sguntepe          #+#    #+#             */
-/*   Updated: 2023/06/21 18:52:06 by sguntepe         ###   ########.fr       */
+/*   Updated: 2023/06/21 19:42:29 by sguntepe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../Include/minishell.h"
-
-/*
-  bu fonksiyon artık ayrıştırdığımız argümanları çalıştırmaya başladığımız yer.
-  Eğer pipe yok ise run_single_command fonksiyonuna, eğer pipe var ise run_multiple_command
-  fonksiyonuna yönlendirme yapar.
-*/
 
 void	executer(void)
 {

@@ -6,18 +6,11 @@
 /*   By: sguntepe <@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 13:30:01 by sguntepe          #+#    #+#             */
-/*   Updated: 2023/06/21 18:52:06 by sguntepe         ###   ########.fr       */
+/*   Updated: 2023/06/21 19:43:25 by sguntepe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../Include/minishell.h"
-
-/*
-	expander => parser tarafından belirlenen parametreleri genişletir ve komutu
-	çalıştırmak için gereken bilgileri toplar.
-	örneğin "~/tmp" -> "/home/kullanıcıadı/tmp"
-			"ls *" -> ls'i tüm dosya ve klasörlerle çalışacak şekilde genişletir.
-*/
 
 void	expander(void)
 {

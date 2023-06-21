@@ -6,17 +6,11 @@
 /*   By: sguntepe <@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 13:27:47 by sguntepe          #+#    #+#             */
-/*   Updated: 2023/06/21 18:52:06 by sguntepe         ###   ########.fr       */
+/*   Updated: 2023/06/21 19:41:41 by sguntepe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../Include/minishell.h"
-
-/*
-  Bu fonksiyon bizim şuanda oluğumuz dizini göstermemizi 
-  sağlayan fonksiyondur. getcwd ile olduğumuz çalışma dizininin
-  yolunu gösterir.
-*/
 
 void	run_pwd(t_cmdlist *cmd_node)
 {

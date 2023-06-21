@@ -6,16 +6,11 @@
 /*   By: sguntepe <@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 13:27:37 by sguntepe          #+#    #+#             */
-/*   Updated: 2023/06/21 18:52:06 by sguntepe         ###   ########.fr       */
+/*   Updated: 2023/06/21 19:41:19 by sguntepe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../Include/minishell.h"
-
-/*
-  Bu fonksiyon girilen tüm değerlerin numerik olup olmadığını 
-  kontrol eder. Eğer numerik değilse 0 döndürür.
-*/
 
 int	is_all_numeric(char *text)
 {
@@ -27,16 +22,6 @@ int	is_all_numeric(char *text)
 	}
 	return (1);
 }
-
-/*
-  Bu fonksiyon bizim exit komutumuz için gerekli olan fonksiyondur.
-  ilk başta get _array len ile argüman sayısını 1 den itibaren saymaya başladıktan sonra
-  (exit'i saymamak için) if sorgusuna geliyor. Eğer exit dışında 1'den fazla
-  fonksiyon girilmiş ise fazla argüman hatasına yönlendirme yapar.
-  Eğer exit dışında 1 tane argüman girilmiş ise girilen sayımnın numerik olup olmadığını kontrol eder.
-  Eğer numerik ise girilen numarayla çıkış işlemi yapılır.
-  En sonunda freeleme işlemi yaptıktan sonra çıkış tamamlanır.
-*/
 
 void	run_exit(t_cmdlist *cmd_node)
 {

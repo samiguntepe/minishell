@@ -6,16 +6,11 @@
 /*   By: sguntepe <@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 13:31:33 by sguntepe          #+#    #+#             */
-/*   Updated: 2023/06/21 18:52:06 by sguntepe         ###   ########.fr       */
+/*   Updated: 2023/06/21 19:40:17 by sguntepe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Include/minishell.h"
-
-/*
-	Daha önce ayarlanmış olan metakarakterlerin ve ortam değişkenlerinin bellek alanlarını
-	serbest bırakır. Readline kütüphanesi tarafından tutulan girdi geçmişini de siler.
-*/
 
 void	free_core(void)
 {
@@ -23,14 +18,6 @@ void	free_core(void)
 	free_envtable();
 	rl_clear_history();
 }
-
-/*
-	önce g_core.cmd değişkeninin hafızada bir yer tutup tutmadığını kontrol eder ve 
-	eğer öyleyse bu bellek alanını serbest bırakır. Ardından, lexer ve parser yapıları 
-	için ayrılan bellek alanlarını serbest bırakan free_lexer() ve free_parser() 
-	fonksiyonlarını çağırır. Son olarak, heredoc dosyası kapalıysa dosya tanıtıcısını 
-	kapatmak için close_heradoc_file() fonksiyonunu çağırır.
-*/
 
 void	free_for_loop(void)
 {

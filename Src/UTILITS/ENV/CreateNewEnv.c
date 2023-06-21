@@ -6,24 +6,18 @@
 /*   By: sguntepe <@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 13:33:30 by sguntepe          #+#    #+#             */
-/*   Updated: 2023/06/21 18:52:06 by sguntepe         ###   ########.fr       */
+/*   Updated: 2023/06/21 19:38:07 by sguntepe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../Include/minishell.h"
 
-/*Main fonksiyonundaki 3. parametreyi bağlı listeye yerleştirir(doldurur).*/
 void	fill_envs(char **env)
 {
 	while (env && *env)
 		add_newenv(&g_core.env_table, *(env++));
 }
 
-/*
-	Eğer bağlı liste yoksa kendisi oluşturur ve ilkk başta çevresel değikeni alır. 
-	Daha sonra '=' den sonrasında karakter var mı kontrol edilir eğer varsa ft_strdup ile
-	son düğümğn contentine kopyalanır.
-*/
 t_env	*add_newenv(t_env **env_table, char *env)
 {
 	t_env	*last_node;

@@ -6,17 +6,11 @@
 /*   By: sguntepe <@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 13:27:42 by sguntepe          #+#    #+#             */
-/*   Updated: 2023/06/21 18:52:06 by sguntepe         ###   ########.fr       */
+/*   Updated: 2023/06/21 19:41:37 by sguntepe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../Include/minishell.h"
-
-/*
-  Bu fonksiyon tek argüman olarak kullanılırsa env gibi çevresel 
-  değişkenleri sıralamak için kullanılır ama birden fazla asrgüman var ise
-  çevresel değişken eklemek için kullanılır.
-*/
 
 void	run_export(t_cmdlist *cmd_node)
 {
@@ -40,13 +34,6 @@ void	run_export(t_cmdlist *cmd_node)
 	}
 }
 
-/*
-  Bu fonksiyon çevresel değişkenleri sıralamak için kullanılan fonksiyondur.
-  Eğer çevresel değişkenin içeriği yok ise çevresel değişkenin başlığını yazdıktan
-  sonra bir sonraki satıra geçer. Fakat çevresel değişkenin içeriği varsa çift tırnak
-  ekleyip env'nin içeriğini çıktı sağlar ve bunu tüm envlere uygular.
-*/
-
 void	single_export_arg(t_cmdlist *cmd_node)
 {
 	t_env	*env;
@@ -68,17 +55,6 @@ void	single_export_arg(t_cmdlist *cmd_node)
 		env = env->next;
 	}
 }
-
-/*
-  Bu fonksiyon birden fazla argüman girilmiş ise kullanılır.
-  Bu fonksiyonun amacı çevresel değişken eklemektir. env_arg_control
-  fonksiyonunda gerekli kontroller yapıldıktan sonra eğer hatalı bir
-  argüman girilmiş ise return döndürürlür. Eğer hatalı bir argüman girilmemiş ise
-  get_env_name fonksiyonuna gidilir. Arg değişkenine env değişkeninin başlangıcı
-  gönderildikten sonra kalan yerin ilk karakterinde '=' kontorlü yapılır. Eğer 
-  env değiştirilebilir ise freeleme işlemi yapılıp fonksiyondan çıkılır. Eğer
-  eşleşen yok ise add_newenv fonksiyonu ile çevresel değişkenlere ekleme yapılır.
-*/
 
 void	double_export_arg(char *env_cmd)
 {
@@ -105,11 +81,6 @@ void	double_export_arg(char *env_cmd)
 		update_env(env_cmd, NULL);
 	free(temp_envname);
 }
-
-/*
-  Bu fonksiyon tüm env'leri gezerek eğer eşleşen çevresel değişken var ise
-  bunları update_env fonksiyonu ile değiştirir. Eğer eşleşen yok ise 0 döndürür.
-*/
 
 int	change_env(char *envname, char *arg, int is_equal)
 {
