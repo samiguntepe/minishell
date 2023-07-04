@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ExpandDollar.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sguntepe <@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
+/*   By: ykarabul <@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 13:29:09 by sguntepe          #+#    #+#             */
-/*   Updated: 2023/06/21 19:42:57 by sguntepe         ###   ########.fr       */
+/*   Updated: 2023/06/21 22:23:08 by ykarabul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	double_dollar(char **dst, char **src)
 {
 	char	*line;
 
-	line = ft_itoa(g_core.exit_status);
+	line = ft_itoa(getpid());
 	own_strjoin(dst, line);
 	free(line);
 	(*src)++;

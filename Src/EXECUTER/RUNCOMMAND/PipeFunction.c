@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PipeFunction.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sguntepe <@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
+/*   By: ykarabul <@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 13:28:23 by sguntepe          #+#    #+#             */
-/*   Updated: 2023/06/21 19:42:04 by sguntepe         ###   ########.fr       */
+/*   Updated: 2023/06/21 22:01:02 by ykarabul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,23 +40,20 @@ void	clear_pipe(int *fd)
 	}
 }
 
-void    switch_pipe(int **fd)
+void	switch_pipe(int **fd)
 {
-    int temp;
+	int	temp;
 
-    temp = (*fd)[0];
-    (*fd)[0] = (*fd)[2];
-    (*fd)[2] = temp;
-
-    temp = (*fd)[1];
-    (*fd)[1] = (*fd)[3];
-    (*fd)[3] = temp;
-
-    temp = (*fd)[5];
-    (*fd)[5] = (*fd)[3];
-    (*fd)[3] = temp;
-
-    temp = (*fd)[2];
-    (*fd)[2] = (*fd)[4];
-    (*fd)[4] = temp;
+	temp = (*fd)[0];
+	(*fd)[0] = (*fd)[2];
+	(*fd)[2] = temp;
+	temp = (*fd)[1];
+	(*fd)[1] = (*fd)[3];
+	(*fd)[3] = temp;
+	temp = (*fd)[5];
+	(*fd)[5] = (*fd)[3];
+	(*fd)[3] = temp;
+	temp = (*fd)[2];
+	(*fd)[2] = (*fd)[4];
+	(*fd)[4] = temp;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RunCd.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sguntepe <@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
+/*   By: ykarabul <@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 13:27:22 by sguntepe          #+#    #+#             */
-/*   Updated: 2023/06/21 19:41:01 by sguntepe         ###   ########.fr       */
+/*   Updated: 2023/06/22 03:37:12 by ykarabul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	cd_single_arg(void)
 		temp_env = temp_env->next;
 	}
 	print_error("-bash: cd: HOME not set\n", NULL, NULL);
-	g_core.exec_output |= 1;
+	g_core.exec_output = 1;
 }
 
 void	cd_double_arg(t_cmdlist *cmd_node)

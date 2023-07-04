@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   signals.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sguntepe <@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
+/*   By: ykarabul <@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 13:31:55 by sguntepe          #+#    #+#             */
-/*   Updated: 2023/06/21 19:40:24 by sguntepe         ###   ########.fr       */
+/*   Updated: 2023/06/22 03:11:33 by ykarabul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,13 @@ void	exit_signal_check(void)
 		g_core.exit_status = 131;
 		exit(131);
 	}
+}
+
+void	kill_process(int sig)
+{
+	free_for_loop();
+	free_core();
+	exit(sig);
 }
 
 void	signals(int sig)

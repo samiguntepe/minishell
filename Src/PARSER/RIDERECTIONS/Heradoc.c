@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Heradoc.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sguntepe <@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
+/*   By: ykarabul <@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 13:32:53 by sguntepe          #+#    #+#             */
-/*   Updated: 2023/06/21 19:46:06 by sguntepe         ###   ########.fr       */
+/*   Updated: 2023/06/22 03:13:33 by ykarabul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,11 @@ int	read_heradoc(t_cmdlist *node, char *eof)
 	close(fd[1]);
 	waitpid(pid, &return_value, 0);
 	return_value = WEXITSTATUS(return_value);
-	if (return_value == SIGNAL_C)
+	if (return_value == SIGINT)
 	{
+		g_core.exec_output = 1;
 		close(fd[0]);
-		free_for_loop();
+		write(1, "\n", 1);
 		return (0);
 	}
 	set_heradoc_value(node, fd);
@@ -76,6 +77,7 @@ void	fill_heradoc(char *eof, int *fd)
 {
 	char	*heradoc_lines;
 
+	signal(SIGINT, kill_process);
 	close(fd[0]);
 	heradoc_lines = get_heradoc_values(eof);
 	write(fd[1], heradoc_lines, ft_strlen(heradoc_lines));

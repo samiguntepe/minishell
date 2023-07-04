@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sguntepe <@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
+/*   By: ykarabul <@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 13:26:49 by sguntepe          #+#    #+#             */
-/*   Updated: 2023/06/21 18:52:06 by sguntepe         ###   ########.fr       */
+/*   Updated: 2023/06/22 03:03:21 by ykarabul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ t_core	g_core;
 void	free_for_loop(void);
 void	free_core(void);
 void	signals(int sig);
+void	kill_process(int sig);
 void	exit_signal_check(void);
 
 #endif
